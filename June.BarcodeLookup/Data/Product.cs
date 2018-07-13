@@ -6,49 +6,62 @@ namespace June.BarcodeLookup.Data
 {
     public class Product
     {
-        public string BarcodeNumber { get; set; }
-        public string BarcodeType { get; set; }
-        public string ProductName { get; set; }
-        public string Mpn { get; set; }
-        public string Model { get; set; }
-        public string Asin { get; set; }
-        public string Title { get; set; }
+        public string barcode_number { get; set; }
+        public string barcode_type { get; set; }
+        public string product_name { get; set; }
+        /// <summary>
+        /// Manufacturer Part Number
+        /// </summary>
+        public string mpn { get; set; }
+        public string model { get; set; }
+        public string asin { get; set; }
+        public string title { get; set; }
         /// <summary>
         /// https://www.google.com/basepages/producttype/taxonomy-with-ids.en-US.txt
         /// </summary>
-        public string Category { get; set; }
-        public string Manufacturer { get; set; }
-        public string Brand { get; set; }
-        public string Label { get; set; }
-        public string Author { get; set; }
-        public string Publisher { get; set; }
-        public string Artist { get; set; }
-        public string Actor { get; set; }
-        public string Director { get; set; }
-        public string Studio { get; set; }
-        public string Genre { get; set; }
-        public string AudienceRating { get; set; }
-        public string Ingredients { get; set; }
-        public string NutritionFacts { get; set; }
-        public string Color { get; set; }
-        public string Format { get; set; }
-        public string PackageQuantity { get; set; }
-        public string Size { get; set; }
-        public string Length { get; set; }
-        public string Width { get; set; }
-        public string Height { get; set; }
-        public string Weight { get; set; }
-        public string ReleaseDate { get; set; }
-        public string Description { get; set; }
-        public string Features { get; set; }
-        public List<string> Images
+        public string category { get; set; }
+        public string manufacturer { get; set; }
+        public string brand { get; set; }
+        public string label { get; set; }
+        public string author { get; set; }
+        public string publisher { get; set; }
+        public string artist { get; set; }
+        public string actor { get; set; }
+        public string director { get; set; }
+        public string studio { get; set; }
+        public string genre { get; set; }
+        public string audience_rating { get; set; }
+        public string ingredients { get; set; }
+        public string nutrition_facts { get; set; }
+        public string color { get; set; }
+        public string format { get; set; }
+        public string package_quantity { get; set; }
+        public string size { get; set; }
+        public string length { get; set; }
+        public string width { get; set; }
+        public string height { get; set; }
+        public string weight { get; set; }
+        public string release_date { get; set; }
+        public string description { get; set; }
+        public List<string> features { get; set; }
+        public List<string> images
         {
             get { return _images ?? (_images = new List<string>()); }
             set { _images = value; }
         }
-        public List<object> Stores { get; set; }
-        public List<object> Reviews { get; set; }
+        public List<Store> stores 
+        {
+            get { return _stores ?? (_stores = new List<Store>()); }
+            set { _stores = value; }
+        }
+        public List<string> reviews 
+        {
+            get { return _reviews ?? (_reviews = new List<string>()); }
+            set { _reviews = value; }
+        }
 
         private List<string> _images;
+        private List<Store> _stores;
+        private List<string> _reviews; 
     }
 }
